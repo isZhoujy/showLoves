@@ -24,7 +24,7 @@
 </head>
 
 <body>
-    <audio autoplay="autopaly">
+    <audio id='audio'>
         <source src="renxi.mp3" type="audio/mp3" />
     </audio>
     <div id="main">
@@ -71,7 +71,7 @@
     <script>
         (function () {
             var canvas = $('#canvas');
-
+               var audioDom = $('#audio');
             if (!canvas[0].getContext) {
                 $("#error").show();
                 return false;
@@ -123,6 +123,7 @@
             var hold = 1;
 
             canvas.click(function (e) {
+                audioDom.play();
                 var offset = canvas.offset(),
                     x, y;
                 x = e.pageX - offset.left;
